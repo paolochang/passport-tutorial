@@ -74,4 +74,12 @@ router.get("/login", function (req, res, next) {
 
 router.get("/login/federated/facebook", passport.authenticate("facebook"));
 
+router.get(
+  "/oauth2/redirect/facebook",
+  passport.authenticate("facebook", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+  })
+);
+
 module.exports = router;
