@@ -2,6 +2,20 @@
 
 In this tutorial, Facebook and Google login will be implemented with using passport middleware.
 
+## Strategies
+
+### `passport-facebook`
+
+```
+$ npm install passport-facebook
+```
+
+### `passport-google-oauth20`
+
+```
+$ npm install passport-google-oauth20
+```
+
 ## todos-express-starter
 
 This is a starter kit for building a todo app with sign in functionality using
