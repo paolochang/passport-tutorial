@@ -6,6 +6,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var session = require("express-session");
+var passport = require("passport");
 
 var SQLiteStore = require("connect-sqlite3")(session);
 
@@ -33,6 +34,7 @@ app.use(
     store: new SQLiteStore({ db: "sessions.db", dir: "./var/db" }),
   })
 );
+app.use(passport.authenticate("session"));
 
 app.use("/", indexRouter);
 app.use("/", authRouter);
